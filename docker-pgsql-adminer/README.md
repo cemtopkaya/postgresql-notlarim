@@ -39,7 +39,7 @@ Biz konteyner ayaklandığında çalışacak komut olarak `command: postgres -c 
 - `tshark -D` ile hangi arayüzleri dinleyebileceğimizi ve numaralarını görebiliriz.
 - `tshark -i <izlenecek arayüz>` komutuyla paketleri yakalamaya başlıyoruz ancak bu paketlerin hareketini ekrana basıyor.
 - `tshark -i <izlenecek arayüz> -w <dosya adı.pcap>` komutuyla ağ arayüzünden gelen ağ trafiğini yakalar ve paketleri bir dosyaya yazıyoruz.
-- `tshark -i <izlenecek arayüz> -w -` komutuyla ağ arayüzünden gelen ağ trafiğini yakalar ve standart çıktıya `stdout` yazdırır.
+- `tshark -i <izlenecek arayüz> -w -` komutuyla ağ arayüzünden gelen ağ trafiğini yakalar ve standart çıktıya (`stdout`) yazdırır.
 - `wireshark -k -i -` komutu `-k` parametresi, Wireshark programının açılır açılmaz trafiği izlemeye başlatır, `-i -` parametresi, Wireshark programının trafiği standart girdiden (`stdin`) okumasını ifade eder.
 - `tshark -i <izlenecek arayüz> -w - | wireshark -k -i -` komutuyla ilk kısımda tshark ile yakalanan paketler stdout'a yazdırılır ve wireshark stdin'den okuyarak görüntüler.
 
