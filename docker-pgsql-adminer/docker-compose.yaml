@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+#    command: ["postgres", "-c", "log_statement=all"]
+# Tüm SQL ifadelerini günlük kayıtları olarak saklayan postgresql konteyneri
+    command: postgres -c logging_collector=on -c log_directory=/var/log/postgresql -c log_statement=all
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  default:
+    name: postgres_adminer_network
